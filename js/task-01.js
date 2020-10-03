@@ -17,7 +17,8 @@ console.log(`В списке ${itemlist.length} категории.`);
 
 itemlist.forEach(num =>
   console.log(
-    `Категория: ${num.firstElementChild.textContent} 
-    Количество элементов: ${num.lastElementChild.children.length}`,
+    `Категория: ${num.firstElementChild.textContent}
+     Количество элементов: ${num.querySelectorAll('li').length}`,
+    //Количество элементов: ${num.lastElementChild.children.length}`,
   ),
 );
