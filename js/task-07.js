@@ -6,11 +6,11 @@
 // <br />
 // <span id="text">Абракадабра!</span>
 
-const FontSizeControl = document.querySelector(['#font-size-control']);
+const FontSizeControl = document.querySelector('#font-size-control');
 const text = document.querySelector('#text');
 
 FontSizeControl.addEventListener('input', changeFont);
 
 function changeFont() {
-  text.classList.add('bigger_font');
+  text.style.fontSize = this.value + 'px';
 }

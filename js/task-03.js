@@ -29,10 +29,13 @@ const images = [
 
 const gallery = document.querySelector('#gallery');
 
-gallery.insertAdjacentHTML(
-  'afterbegin',
-  images.reduce((acc, { url, alt }) => {
-    acc += `<li class='gallery__item'><img class='gallery__image' src="${url}" alt="${alt}"></li>`;
-    return acc;
-  }, ''),
-);
+gallery.insertAdjacentHTML('afterbegin', htmlGallery());
+
+function htmlGallery() {
+  return images
+    .map(
+      ({ url, alt }) =>
+        `<li class='gallery__item'><img class='gallery__image' src="${url}" alt="${alt}"></li>`,
+    )
+    .join('');
+}
